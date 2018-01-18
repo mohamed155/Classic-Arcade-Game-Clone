@@ -1,0 +1,72 @@
+body {
+    text-align: center;
+}
+
+p {
+    margin: 0 auto;
+}
+
+/*
+    make canvase is full screen sized on mobile
+    but not to be too big on computer screens
+*/
+canvas {
+    width: 80vw;
+    max-width: 500px;
+}
+
+/*
+    style class related to control arrows and its container
+*/
+.container {
+    position: relative;
+    text-align: center;
+    display: none;
+    width: 150px;
+    height: 150px;
+    margin: 0;
+    padding: 0;
+}
+
+.control {
+    clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
+    background-color: #626262;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+}
+
+.left {
+    top: 50px;
+}
+
+.right {
+    transform: rotate(180deg);
+    top: 50px;
+    left: 100px;
+}
+
+.up {
+    transform: rotate(90deg);
+    left: 50px;
+}
+
+.down {
+    transform: rotate(-90deg);
+    top: 100px;
+    left: 50px;
+}
+
+/*
+    make the control arrows display only on mobile screens
+*/
+@media screen and (max-device-width: 640px) {
+    .container {
+        display: inline-block;
+    }
+    
+    canvas {
+        width: 100vw;
+        max-width: none;
+    }
+}
